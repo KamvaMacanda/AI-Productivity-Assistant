@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Fragment } from "react";
 import { Topbar } from "@/components/topbar";
 import { Sparkles, Clock, MapPin, Video } from "lucide-react";
 

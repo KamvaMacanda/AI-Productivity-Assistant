@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Topbar } from "@/components/topbar";
 import { Sparkles, Send, Paperclip, Mic, FileText, Mail, CheckSquare, Calendar, Code2, BarChart3 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/assistant")({
@@ -92,12 +92,12 @@ function AssistantPage() {
 }
 
 function ThinkingBubble() {
-  const [phase, setPhase] = useState(0);
   const phrases = ["Analyzing your request…", "Generating insights…", "Optimizing results…", "Finalizing output…"];
-  useState(() => {
+  const [phase, setPhase] = useState(0);
+  useEffect(() => {
     const id = setInterval(() => setPhase((p) => (p + 1) % phrases.length), 900);
     return () => clearInterval(id);
-  });
+  }, [phrases.length]);
   return (
     <div className="flex gap-3 animate-fade-in">
       <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full gradient-primary text-white animate-pulse-glow">
