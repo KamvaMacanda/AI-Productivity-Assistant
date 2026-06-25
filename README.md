@@ -1,5 +1,8 @@
 # AI Workplace Productivity Assistant
 
+
+## Project link 
+`` https://capeitinitiative.sharepoint.com/:u:/s/TechTeam/IQBZnw5qclvXSZvw8uWjkB_gAc8AKVgd9lkUC_jV6_qq2n8?e=MHGGhg ``
 ## Project Overview
 
 AI Workplace Productivity Assistant is a modern AI-powered web application designed to help professionals automate repetitive workplace tasks, improve efficiency, and enhance productivity through intelligent automation.
