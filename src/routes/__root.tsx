@@ -116,8 +116,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <AmbientBackground />
+      <div className="relative flex min-h-screen w-full">
+        <AppSidebar />
+        <div className="flex min-w-0 flex-1 flex-col">
+          <Outlet />
+        </div>
+        <FloatingAssistant />
+      </div>
+      <Toaster theme="dark" position="top-right" toastOptions={{ className: "glass-card" }} />
     </QueryClientProvider>
   );
 }
