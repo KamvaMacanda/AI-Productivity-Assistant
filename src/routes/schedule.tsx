@@ -54,8 +54,8 @@ function SchedulePage() {
               <div key={d} className="text-center text-xs font-medium text-muted-foreground pb-2">{d}</div>
             ))}
             {hours.map((h, hi) => (
-              <>
-                <div key={`h${hi}`} className="text-[10px] text-muted-foreground text-right pr-2 pt-1">{h}{Number(h) < 9 ? "pm" : "am"}</div>
+              <Fragment key={`row-${hi}`}>
+                <div className="text-[10px] text-muted-foreground text-right pr-2 pt-1">{h}{Number(h) < 9 ? "pm" : "am"}</div>
                 {days.map((_, di) => {
                   const ev = events.find((e) => e.day === di && e.start === hi);
                   if (ev) {
@@ -74,7 +74,7 @@ function SchedulePage() {
                   if (occupied) return null;
                   return <div key={`${di}-${hi}`} className="h-12 rounded-lg border border-dashed border-border/40 hover:border-accent/40 transition" />;
                 })}
-              </>
+              </Fragment>
             ))}
           </div>
         </div>
